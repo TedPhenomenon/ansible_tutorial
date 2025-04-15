@@ -23,7 +23,14 @@
        update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
-
+  - name: copy default html file for syte
+    tags: apache,apache2, httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
 
 
 
